@@ -62,11 +62,28 @@ namespace DemoEntityFramework.UI
                         nuevo.CompanyName = Console.ReadLine();
                         shipper.Add(nuevo);
                         option = 0;
+                        Console.WriteLine("Shipper Insertado");
                         Console.ReadLine();
                         break;
                     case 3: Console.Clear();
                         Console.WriteLine("    Modificar Shipper    ");
                         Console.WriteLine("-------------------------");
+                        Shippers shipperModificado = new Shippers();
+                        Console.Write("Id: ");
+                        shipperModificado.ShipperID = Int32.Parse(Console.ReadLine());
+                        Console.Write("CompanyName: ");
+                        shipperModificado.CompanyName = Console.ReadLine();
+                        try
+                        {
+                            shipper.Update(shipperModificado);
+                            Console.WriteLine("Shipper Modificado");
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("El Id ingresado no existe");
+                        }                        
+                        option = 0;
+                        Console.ReadLine();
                         break;
                     case 4:
                         Console.Clear();
@@ -80,6 +97,8 @@ namespace DemoEntityFramework.UI
                             try
                             {
                                 shipper.Delete(id);
+                                Console.WriteLine("Shipper Eliminado.");
+                                Console.ReadLine();
                             }
                             catch (Exception)
                             {
@@ -93,7 +112,6 @@ namespace DemoEntityFramework.UI
                             Console.ReadLine();
                         }                        
                         option = 0;
-                        Console.ReadLine();
                         break;
                     case 0:Console.Clear();
                         option = 39;
