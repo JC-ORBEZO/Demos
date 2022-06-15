@@ -1,0 +1,17 @@
+form{
+    padding-bottom: 10px;
+    background-color: rgb(203, 201, 218);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+}
+
+form > span{
+    width: 90%;
+}
+
+input{
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 5px;
+}
