@@ -1,3 +1,11 @@
+resaltarInput=(id)=>{
+    if(id.value.trim()==""){
+        id.style.border="2px red solid";
+    }else{
+        id.style.border="1px red black";
+    }
+}
+
 enviar=(e)=>{
     event.preventDefault();
     let formu=document.getElementById("formulario");
@@ -14,33 +22,29 @@ enviar=(e)=>{
     console.log(boton);
     console.log("formu");
 
+    //let fechaCompleta=Date.Parse(dateOfBirth.value);
+    let fechaCompleta2=(dateOfBirth.value).split("-");;
+    //
+    //console.log(fechaCompleta);
+    console.log("fechas");
+    console.log(fechaCompleta2[0]+1);
+    console.log(fechaCompleta2[1]+1);
+    console.log(fechaCompleta2[2]+1);
+
     
     let date = new Date();
     let dia=date.getDate();
     let mes=date.getMonth() +1;
     let anio=date.getFullYear();
-    console.log(dia);
+    console.log(dia+1);
     console.log(mes);
     console.log(anio);
 
     boton.disabled = true;
-    if(name.value.trim()==""){
-        name.style.border="2px red solid";
-    }else{
-        name.style.border="1px red black";
-    }
 
-    if(lastName.value.trim()==""){
-        lastName.style.border="2px red solid";
-    }else{
-        lastName.style.border="1px red black";
-    }
-
-    if(business.value.trim()==""){
-        business.style.border="2px red solid";
-    }else{
-        business.style.border="1px red black";
-    }
+    resaltarInput(name);
+    resaltarInput(lastName);
+    resaltarInput(business);
 }
 
 recargar=(e)=>{
