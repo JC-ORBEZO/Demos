@@ -1,3 +1,4 @@
+
 resaltarInput=(id)=>{
     if(id.value.trim()==""){
         id.style.border="2px red solid";
@@ -14,37 +15,52 @@ enviar=(e)=>{
     let business=document.getElementById("business");
     let dateOfBirth=document.getElementById("dateOfBirth");    
     let boton=document.getElementById("boton");
-    console.log(formu);
-    console.log(name.value);
-    console.log(lastName.value);
-    console.log(dateOfBirth.value);
-    console.log(dateOfBirth);
-    console.log(boton);
-    console.log("formu");
+    let edad=document.getElementById("edad");
 
-    //let fechaCompleta=Date.Parse(dateOfBirth.value);
     let fechaCompleta2=(dateOfBirth.value).split("-");;
-    //
+    
     //console.log(fechaCompleta);
     console.log("fechas");
-    console.log(fechaCompleta2[0]+1);
-    console.log(fechaCompleta2[1]+1);
-    console.log(fechaCompleta2[2]+1);
+    console.log(parseInt(fechaCompleta2[0])+1);
+    console.log(parseInt(fechaCompleta2[1])+1);
+    console.log(parseInt(fechaCompleta2[2])+1);
+    var diaIngresado=parseInt(fechaCompleta2[2]);
+    var mesIngresado=parseInt(fechaCompleta2[1]);
+    var anioIngresado=parseInt(fechaCompleta2[0]);
 
-    
-    let date = new Date();
-    let dia=date.getDate();
-    let mes=date.getMonth() +1;
-    let anio=date.getFullYear();
-    console.log(dia+1);
-    console.log(mes);
-    console.log(anio);
+    //Fecha Actual: Enteros todos
+    let dateActual = new Date();
+    let diaActual=dateActual.getDate();
+    let mesActual=dateActual.getMonth() +1;
+    let anioActual=dateActual.getFullYear();
+    var edadActual=0;
+    if(mesActual>=mesIngresado){         
+        if(mesActual==mesIngresado){
+            if(diaIngresado>=diaActual){
+                edadActual=anioActual-anioIngresado;
+                if(diaIngresado==diaActual) edadActual=anioActual-anioIngresado;
+            }else{
+                edadActual=anioActual-anioIngresado-1;
+            }                       
+        }else{
+            edadActual=anioActual-anioIngresado;
+        }               
+    }else{
+        edadActual=anioActual-anioIngresado-1;
+    }
 
     boton.disabled = true;
 
     resaltarInput(name);
     resaltarInput(lastName);
     resaltarInput(business);
+    resaltarInput(dateOfBirth);
+    if(anioIngresado!=0){
+        edad.style.visibility="visible";
+        edad.textContent="Edad: " + edadActual;
+    }
+    
+    
 }
 
 recargar=(e)=>{
