@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEntityFramework.Logic",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEntityFramework.Entities", "DemoEntityFramework.Entities\DemoEntityFramework.Entities.csproj", "{531F9F1B-DE15-4436-B1FD-3B000BAFE8B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoEntityFramework.Web", "DemoEntityFramework.Web\DemoEntityFramework.Web.csproj", "{57F305E7-B81A-48C4-8592-13BC1D10FDDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{531F9F1B-DE15-4436-B1FD-3B000BAFE8B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{531F9F1B-DE15-4436-B1FD-3B000BAFE8B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{531F9F1B-DE15-4436-B1FD-3B000BAFE8B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57F305E7-B81A-48C4-8592-13BC1D10FDDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F305E7-B81A-48C4-8592-13BC1D10FDDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F305E7-B81A-48C4-8592-13BC1D10FDDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F305E7-B81A-48C4-8592-13BC1D10FDDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
