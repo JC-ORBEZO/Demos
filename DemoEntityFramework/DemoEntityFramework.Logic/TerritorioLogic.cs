@@ -25,6 +25,11 @@ namespace DemoEntityFramework.Logic
             return _context.Territories.ToList();
         }
 
+        public Territories GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Territories t)
         {
             throw new NotImplementedException();

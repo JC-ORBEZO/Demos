@@ -34,6 +34,11 @@ namespace DemoEntityFramework.Logic
             return _context.Products.ToList();
         }
 
+        public Products GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Products product)
         {
             var productUpdate = _context.Products.Find(product.ProductID);

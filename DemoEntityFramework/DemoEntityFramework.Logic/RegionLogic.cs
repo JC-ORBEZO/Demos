@@ -34,6 +34,11 @@ namespace DemoEntityFramework.Logic
             return _context.Region.ToList();
         }
 
+        public Region GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Region region)
         {
             var regionUpdate = _context.Region.Find(region.RegionID);

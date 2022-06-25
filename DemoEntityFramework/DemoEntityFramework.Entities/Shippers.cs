@@ -18,6 +18,7 @@ namespace DemoEntityFramework.Entities
 
         [Required]
         [StringLength(40)]
+        [Display(Name ="Nombre de Compania Display")]
         public string CompanyName { get; set; }
 
         [StringLength(24)]

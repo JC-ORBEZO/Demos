@@ -27,6 +27,12 @@ namespace DemoEntityFramework.Logic
             return _context.Shippers.ToList();
         }
 
+        public Shippers GetById(int id)
+        {
+            var shipper = _context.Shippers.FirstOrDefault(x => x.ShipperID == id);
+            return shipper;
+        }
+
         public void Update(Shippers shipper)
         {
             var shipperUpdate = _context.Shippers.Find(shipper.ShipperID);

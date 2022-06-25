@@ -1,0 +1,41 @@
+﻿@model DemoEntityFramework.Web.Models.ShipperListadoModel
+
+@{
+    ViewBag.Title = "Listado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listado</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<span>Cantidad de Registros: </span>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ListShippers.First().CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListShippers.First().Phone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.ListShippers) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ShipperID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ShipperID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ShipperID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,28 @@
+﻿@model List<DemoEntityFramework.Entities.Shippers>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>COMPANY NAME</th>
+            <th>PHONE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ShipperID</td>
+                <td>@item.CompanyName</td>
+                <td>@item.Phone</td>
+            </tr>
+        }            
+        </tbody>
+</table>
+
+
